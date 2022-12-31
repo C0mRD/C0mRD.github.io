@@ -281,6 +281,7 @@ article.active {
   box-shadow: var(--shadow-2);
   cursor: pointer;
   z-index: 1;
+  margin-bottom: 20px;
 }
 
 .content-card::before {
@@ -905,6 +906,11 @@ main {
 
 .skill-progress-fill {
   background: var(--text-gradient-yellow);
+  height: 100%;
+  border-radius: inherit;
+}
+.skill-progress-fill-blue{
+  background:rgb(81, 81, 177);
   height: 100%;
   border-radius: inherit;
 }
