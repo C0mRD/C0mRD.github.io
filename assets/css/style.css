@@ -578,9 +578,8 @@ main {
   z-index: -1;
 }
 
-.bi-diagram-3-fill,.bi-camera2{
-  color: #e7c465;
-  font-size: 35px;
+.svgicon{
+  filter: invert(100%) sepia(19%) saturate(7110%) hue-rotate(321deg) brightness(94%) contrast(91%);
 }
 
 .service-icon-box { margin-bottom: 10px; }
