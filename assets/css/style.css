@@ -319,6 +319,7 @@ main {
   top: 0;
   left: 0;
   margin: 0;
+  pointer-events:none;
 }
 
 /*-----------------------------------*\
@@ -501,7 +502,7 @@ main {
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
-  z-index: 5;
+  z-index: 1;
 }
 
 .navbar-list {
@@ -575,6 +576,11 @@ main {
   background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
+}
+
+.bi-diagram-3-fill,.bi-camera2{
+  color: #e7c465;
+  font-size: 35px;
 }
 
 .service-icon-box { margin-bottom: 10px; }
@@ -787,11 +793,11 @@ main {
 
 .clients-item img {
   width: 100%;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); }
+/* .clients-item img:hover { filter: grayscale(0); } */
 
 
 
@@ -912,11 +918,12 @@ main {
   #PORTFOLIO
 \*-----------------------------------*/
 
-.filter-list { display: none; }
+.filter-list { display: none; z-index: 5;}
 
 .filter-select-box {
   position: relative;
   margin-bottom: 25px;
+  z-index: 5;
 }
 
 .filter-select {
@@ -943,7 +950,7 @@ main {
   padding: 6px;
   border: 1px solid var(--jet);
   border-radius: 14px;
-  z-index: 2;
+  z-index: 5;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -954,6 +961,7 @@ main {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
+  z-index: 5;
 }
 
 .select-item button {
@@ -972,7 +980,7 @@ main {
 .project-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 20px;
   margin-bottom: 10px;
 }
 
@@ -981,6 +989,9 @@ main {
 .project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
+  border: 1px solid rgb(40, 40, 40);
+  border-radius: 20px;
+  background-color: rgb(40, 40, 40);
 }
 
 @keyframes scaleUp {
@@ -1064,7 +1075,12 @@ main {
 }
 
 
-
+.projects{
+  z-index: 5;
+}
+.blog .blog-posts .blog-posts-list{
+  z-index: 5;
+}
 
 
 /*-----------------------------------*\
@@ -1647,6 +1663,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 25px;
     padding-left: 5px;
     margin-bottom: 30px;
+    z-index: 5;
   }
 
   .filter-item button {
@@ -1781,7 +1798,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .project-list { grid-template-columns: repeat(3, 1fr); }
+  .project-list { grid-template-columns: repeat(2, 1fr); }
 
 
 
