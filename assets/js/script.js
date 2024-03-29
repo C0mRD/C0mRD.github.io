@@ -42,8 +42,8 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange',
     function () {
         if (document.visibilityState === "visible") {
-            document.title = "Hema Kalyan Portfolio";
-            $("#favicon").attr("href", "assets/images/favicon.png");
+            document.title = "Sujoy Nath's Portfolio";
+            // $("#favicon").attr("href", "assets/images/favicon.png");
         }
     });
 
