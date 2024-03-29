@@ -1,238 +1,232 @@
-'use strict';
+$(document).ready(function () {
 
+    $('#menu').click(function () {
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+    });
 
+    $(window).on('scroll load', function () {
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
 
-// element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+        if (window.scrollY > 60) {
+            document.querySelector('#scroll-top').classList.add('active');
+        } else {
+            document.querySelector('#scroll-top').classList.remove('active');
+        }
 
+        // scroll spy
+        $('section').each(function () {
+            let height = $(this).height();
+            let offset = $(this).offset().top - 200;
+            let top = $(window).scrollTop();
+            let id = $(this).attr('id');
 
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+            if (top > offset && top < offset + height) {
+                $('.navbar ul li a').removeClass('active');
+                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+            }
+        });
+    });
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-var w = parseInt(window.innerWidth);
-if(w<580){
-  elementToggleFunc(sidebar);
-}
+    // smooth scrolling
+    $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top,
+        }, 500, 'linear')
+    });
 
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
-  });
-}
-
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-
-const filterFunc = function (selectedValue) {
-
-  for (let i = 0; i < filterItems.length; i++) {
-
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
-
-  }
-
-}
-
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-
-  filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-
-  });
-
-}
-
-
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
-
-  });
-}
-
-tsParticles.load("tsparticles", {
-  particles: {
-      number: {
-          value: 50
-      },
-      color: {
-          value: "random",
-          animation: {
-              enable: true,
-              speed: 40,
-              sync: false
-          }
-      },
-      shape: {
-          type: "circle",
-      },
-      size: {
-          value: 5,
-          random: true,
-          animation: {
-              enable: true,
-              speed: 16,
-              minimumValue: 0.1,
-              sync: false
-          }
-      },
-      links: {
-          enable: true,
-          distance: 100,
-          color: "random",
-          opacity: 0.4,
-          width: 1
-      },
-      move: {
-          enable: true,
-      },
-  },
-  interactivity: {
-      detectsOn: "canvas",
-      events: {
-          onHover: {
-              enable: true,
-              mode: "repulse"
-          },
-          onClick: {
-              enable: false,
-              mode: "bubble"
-          },
-          resize: true
-      },
-      modes: {
-          grab: {
-              distance: 400,
-              links: {
-                  opacity: 1
-              }
-          },
-          bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 0.8
-          },
-          repulse: {
-              distance: 200
-          },
-          push: {
-              quantity: 4
-          },
-          remove: {
-              quantity: 2
-          }
-      }
-  },
-  detectRetina: true,
 });
+
+document.addEventListener('visibilitychange',
+    function () {
+        if (document.visibilityState === "visible") {
+            document.title = "Hema Kalyan Portfolio";
+            $("#favicon").attr("href", "assets/images/favicon.png");
+        }
+    });
+
+
+// <!-- typed js effect starts -->
+var typed = new Typed(".typing-text", {
+    strings: ["Machine Learning", "Data Science", "Artificial Intelligence", "Deep Learning", "Computer Vision","Natural Language Processing", "Generative AI"],
+    loop: true,
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 500,
+});
+// <!-- typed js effect ends -->
+
+
+async function fetchData(type = "skills") {
+    let response
+    type === "skills" ?
+        response = await fetch("skills.json")
+        :
+        response = await fetch("./projects/projects.json")
+    const data = await response.json();
+    return data;
+}
+
+function showSkills() {
+    let skillsContainer = document.getElementById("skillsContainer");
+    let skillHTML = "";
+    
+    // Fetch the data from the JSON file
+    fetch('path/to/skills.json')
+      .then(response => response.json()) // Parse the JSON data into an object
+      .then(skills => {
+        // Loop through each skill and generate the HTML code
+        skills.forEach(skill => {
+          skillHTML += `
+            <div class="bar">
+              <div class="info">
+                <img src=${skill.icon} alt="skill" />
+                <span>${skill.name}</span>
+              </div>
+            </div>`;
+        });
+        // Insert the HTML code into the skills container element
+        skillsContainer.innerHTML = skillHTML;
+      });
+  }
+  
+
+function showProjects(projects) {
+    let projectsContainer = document.querySelector("#work .box-container");
+    let projectHTML = "";
+    projects.slice(0, 10).filter(project => project.category != "android").forEach(project => {
+        projectHTML += `
+        <div class="box tilt">
+      <img draggable="false" src="/assets/images/projects/${project.image}.png" alt="project" />
+      <div class="content">
+        <div class="tag">
+        <h3>${project.name}</h3>
+        </div>
+        <div class="desc">
+          <p>${project.desc}</p>
+          <div class="btns">
+            <a href="${project.links.view}" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+            <a href="${project.links.code}" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>`
+    });
+    projectsContainer.innerHTML = projectHTML;
+
+    // <!-- tilt js effect starts -->
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 15,
+    });
+    // <!-- tilt js effect ends -->
+
+    /* ===== SCROLL REVEAL ANIMATION ===== */
+    const srtop = ScrollReveal({
+        origin: 'top',
+        distance: '80px',
+        duration: 1000,
+        reset: true
+    });
+
+    /* SCROLL PROJECTS */
+    srtop.reveal('.work .box', { interval: 200 });
+
+}
+
+fetchData().then(data => {
+    showSkills(data);
+});
+
+fetchData("projects").then(data => {
+    showProjects(data);
+});
+
+// <!-- tilt js effect starts -->
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    max: 15,
+});
+// <!-- tilt js effect ends -->
+
+
+// pre loader start
+// function loader() {
+//     document.querySelector('.loader-container').classList.add('fade-out');
+// }
+// function fadeOut() {
+//     setInterval(loader, 500);
+// }
+// window.onload = fadeOut;
+// pre loader end
+
+// disable developer mode
+document.onkeydown = function (e) {
+    if (e.keyCode == 123) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+    }
+}
+
+// Start of Tawk.to Live Chat
+
+// End of Tawk.to Live Chat
+
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+const srtop = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 1000,
+    reset: true
+});
+
+/* SCROLL HOME */
+srtop.reveal('.home .content h3', { delay: 200 });
+srtop.reveal('.home .content p', { delay: 200 });
+srtop.reveal('.home .content .btn', { delay: 200 });
+
+srtop.reveal('.home .image', { delay: 400 });
+srtop.reveal('.home .linkedin', { interval: 600 });
+srtop.reveal('.home .github', { interval: 800 });
+srtop.reveal('.home .twitter', { interval: 1000 });
+srtop.reveal('.home .telegram', { interval: 600 });
+srtop.reveal('.home .instagram', { interval: 600 });
+srtop.reveal('.home .dev', { interval: 600 });
+
+/* SCROLL ABOUT */
+srtop.reveal('.about .content h3', { delay: 200 });
+srtop.reveal('.about .content .tag', { delay: 200 });
+srtop.reveal('.about .content p', { delay: 200 });
+srtop.reveal('.about .content .box-container', { delay: 200 });
+srtop.reveal('.about .content .resumebtn', { delay: 200 });
+
+
+/* SCROLL SKILLS */
+srtop.reveal('.skills .container', { interval: 200 });
+srtop.reveal('.skills .container .bar', { delay: 400 });
+
+/* SCROLL EDUCATION */
+srtop.reveal('.education .box', { interval: 200 });
+
+/* SCROLL PROJECTS */
+srtop.reveal('.work .box', { interval: 200 });
+
+/* SCROLL EXPERIENCE */
+srtop.reveal('.experience .timeline', { delay: 400 });
+srtop.reveal('.experience .timeline .container', { interval: 400 });
+
+/* SCROLL CONTACT */
+srtop.reveal('.contact .container', { delay: 400 });
+srtop.reveal('.contact .container .form-group', { delay: 400 });
