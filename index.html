@@ -2,332 +2,776 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Sujoy Nath, portfolio, Machine Learning , personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
-    <meta name="description" content="Welcome to Sujoy Nath's Portfolio. Machine Learning Enthusiast"/>
-    <link rel="stylesheet" href="./assets/css/style.css">     <!-- Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png"> -->
-    <title>Sujoy Nath's Portfolio</title>
+    <title>Sujoy Nath | ML Engineer & Researcher</title>
+    <style>
+        :root {
+            --primary-color: #2d3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 4px solid white;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+            overflow: hidden;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-item a:hover {
+            color: var(--light-color);
+            text-decoration: underline;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--secondary-color);
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-subtitle {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .card-meta {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .card-content {
+            font-size: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .card-content ul {
+            padding-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .publication-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .publication-card:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            transform: translateY(-5px);
+        }
+        
+        .publication-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-authors {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-venue {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        .publication-status {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+        
+        .status-accepted {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .status-review {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .achievement-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .achievement-card:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            transform: translateY(-5px);
+        }
+        
+        .achievement-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+        
+        .achievement-content {
+            flex: 1;
+        }
+        
+        .achievement-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .achievement-subtitle {
+            font-size: 1rem;
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .achievement-meta {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links li a {
+                padding: 0.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Theme toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Dark theme */
+        .dark-theme {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #e94560;
+            --light-color: #0f3460;
+            --dark-color: #e1e1e1;
+            background-color: #121212;
+            color: #e1e1e1;
+        }
+        
+        .dark-theme nav {
+            background-color: #1a1a2e;
+        }
+        
+        .dark-theme .card, 
+        .dark-theme .publication-card, 
+        .dark-theme .achievement-card {
+            background-color: #1a1a2e;
+            color: #e1e1e1;
+        }
+        
+        .dark-theme .skill-tag {
+            background-color: #0f3460;
+            color: #e1e1e1;
+        }
+        
+        .dark-theme .nav-links li a {
+            color: #e1e1e1;
+        }
+    </style>
 </head>
-
-
-
-<!-- Google tag (gtag.js) Starts -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JNBQXGQJJF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JNBQXGQJJF');
-</script>
-</head>
-<body oncontextmenu="return false">
-<!-- Google tag (gtag.js) Ends -->
-
-
-
-<!-- navbar starts -->
-<header>
-  <a href="/" class="logo"><i class="fas fa-cog fa-pulse"></i>c0mrd</a>
-        <div id="menu" class="fas fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#hackathons">Hackathons</a></li>
-            <li><a href="#skills">Skills</a></li>
-            </ul>
-        </nav>
-</header>
-
-
-<br><br>
-<!-- hero section starts -->
-<section class="home" id="home">
-    <div id="particles-js"></div>
-    <div class="content">
-    <h2>Hi There,<br/> I'm<span> Sujoy Nath</span></h2>
-    <p>i am into <span class="typing-text"></span></p>
-    <a href="#about" class="btn"><span>About Me</span>
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <div class="socials">
-        <ul class="social-icons">
-          <li><a class="linkedin" aria-label="LinkedIn" href="https://www.linkedin.com/in/sujoy-nath-c0mrd/" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
-          <li><a class="github" aria-label="GitHub" href= "https://github.com/c0mrd" target="_blank"><i class="fab fa-github"></i></a></li>
-          <!-- <li><a class="dev" aria-label="Medium" href="#" target="_blank"><i class="fab fa-medium-m"></i></a></li>
-          <li><a class="dev" aria-label="Kaggle" href="#" target="_blank"><i class="fab fa-kaggle"></i></a></li>
-          <li><a class="dev" aria-label="Kaggle" href="#" target="_blank"><i class="fas fa-briefcase"></i></a></li> -->
-        </ul>
-      </div>
-    </div>
-<div class="image">
-    <img draggable="false" class="tilt" src="./assets/images/pic5.jpg" alt="Sujoy Nath">
-</div>
-</section>
-<!-- hero section ends -->
-
-
-
-<!-- about section starts -->
-<section class="about" id="about">
-    <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
-    <div class="row">
-    <div class="image">
-        <img draggable="false" class="tilt" src="./assets/images/profile2.jpg" alt="">
-    </div>
-    <div class="content"><br><br><br>
-        <h3>I'm <span> Sujoy Nath</span></h3>
-        <span class="tag">Data Scientist / ML Engineer</span>
-        <p><br>I am currently pursuing my bachelor's degree in computer science and business systems at Netaji Subhash Engineering College. I have a strong passion for data science and machine learning, and I have completed several internships and projects in this field. My job involves fine tuning state-of-the-art deep learning models for specific usecases to build robust & accurate systems. Some of my most favourite topics in this domain are: Transformer architecture, Large-Language-Models(LLMs), RNN, Self-attention mechanism, Quantization. As a part of my course work I am also proficient with Data Structures & Algorithms, System design and Operating Systems. In my free time I love to play chess.</p>
-        <div class="box-container">
-            <div class="box">
-              <p><span> E-mail : </span> sujoynathofficial@gmail.com</p>
-              <p><span> Place : </span>Kolkata, West Bengal, India</p>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img src="assets/images/pic1.jpg" alt="SN"> <!-- Add profile image URL here -->
+                </div>
+                <h1 class="name">Sujoy Nath</h1>
+                <p class="title">ML Engineer & AI Researcher</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sujoynathofficial@gmail.com">sujoynathofficial@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919123799039">+91-9123799039</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Kolkata, West Bengal, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://sujoynath.in" target="_blank">sujoynath.in</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- <div class="resumebtn">
-            <a href="https://drive.google.com/file/d/1CGOctjKxnpIIJo7OZnYVnjUnCQr3M_Ea/view?usp=sharing" target="_blank" class="btn"><span>Resume</span>
-                <i class="fas fa-file"></i>
-            </a>
-        </div> -->
+    </header>
+    
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <p>I am a passionate ML Engineer and AI Researcher specializing in LLM applications, Trustworthy AI, Computer Vision, and Multimodality. Currently pursuing my Bachelor's degree in Computer Science and Business Systems, I am actively involved in cutting-edge research at the Indian Statistical Institute and have industry experience as a Machine Learning Engineer at Geogo Techsolutions.</p>
+                    <p>My research interests include applications of Large Language Models for Medical Report Generation, hallucination detection in LLMs, prompt engineering, and computer vision models. I have publications accepted at prestigious conferences like AAAI and work under review at IJCNN.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Experience</h2>
+            
+            <div class="card fade-in">
+                <h3 class="card-title">Project Intern</h3>
+                <h4 class="card-subtitle">Indian Statistical Institute (ISI), Electronics and Communication Sciences Unit (ECSU)</h4>
+                <div class="card-meta">
+                    <span>June 2024 - Present</span>
+                    <span>Kolkata, India (Onsite)</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Worked on a project of simplified Medical Report Generation (MRG) system using prompt engineering techniques like Chained Prompting and In-Context Learning. Fine-tuned LLaMa models and integrated Gemini-1.5-Flash API. Proposed CPMK-E (Chained Prompting for Medical Report Keyword Extraction) to enhance LLM fairness in medical settings. Work accepted as a student abstract at AAAI 2025.</li>
+                        <li>Developed a detailed image captioning system by processing images through BLIP for generating embeddings and a short captions, and using CerberusDet (a fine-tuned YOLOv8) for object detection. Constructed Alpaca-formatted inputs and fine-tuned LLaMa 3.1, LLaMa 2, Mistral 7B, and Phi-2 to generate detailed captions. Target captions were obtained via Gemini-1.5-Flash API. Evaluated performance using BLEU, ROUGE, BERT-based Precision, Recall, F1 Score, and Repetition Rate.</li>
+                        <li>Conducted research on LLM hallucination detection, the work is currently under review in IJCNN 2025.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card fade-in">
+                <h3 class="card-title">Machine Learning Engineer Intern</h3>
+                <h4 class="card-subtitle">Geogo Techsolutions</h4>
+                <div class="card-meta">
+                    <span>October 2023 - Present</span>
+                    <span>Kolkata, India (Hybrid)</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Built an end-to-end face comparison and similarity search solution, achieving 98% accuracy in benchmarks against Amazon Rekognition. Implemented state-of-the-art computer vision models for employee authorization and face verification, successfully matching current faces with historical photos.</li>
+                        <li>Developed a custom vector database with Bruteforce and PCA indexing optimizations for efficient image embedding searches, demonstrating expertise in large-scale computer vision systems.</li>
+                        <li>Engineered an Automatic Speech Recognition (ASR) model using Transformer architecture, trained on a 3-hour Hindi-English mixed dataset. Achieved 34% WER through innovative audio preprocessing with STFT and Conv1D layers, now deployed for insurance call transcription.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card fade-in">
+                <h3 class="card-title">Summer Internship</h3>
+                <h4 class="card-subtitle">Defence Research and Development Organisation (DRDO), DEBEL Lab</h4>
+                <div class="card-meta">
+                    <span>March 2024 - April 2024</span>
+                    <span>Bengaluru, India (Onsite)</span>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Developed comprehensive dataset using IMU sensor data from Xsens, capturing walking patterns of 20 subjects. Applied computer vision and machine learning techniques for motion analysis.</li>
+                        <li>Conducted research on human gait pattern analysis using ensemble learning methods, implementing real-time prediction systems for lower limb prosthetics.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title fade-in">Research Publications</h2>
+            
+            <div class="publications-list">
+                <div class="publication-card fade-in">
+                    <h3 class="publication-title">From Complexity to Clarity: Transforming Chest X-ray Reports with Chained Prompting</h3>
+                    <p class="publication-authors">Sujoy Nath, Arkaprabha Basu, Kushal Bose, Swagatam Das</p>
+                    <p class="publication-venue">AAAI 2025 Student Abstract <span class="publication-status status-accepted">Accepted</span></p>
+                    <p class="publication-ranking">Ranking: A*</p>
+                </div>
+                
+                <div class="publication-card fade-in">
+                    <h3 class="publication-title">Hallucination detection on LLMs</h3>
+                    <p class="publication-authors">Sharanya Dasgupta, Sujoy Nath, Arkaprabha Basu, Pourya Shamsolmoali, Swagatam Das</p>
+                    <p class="publication-venue">IJCNN 2025 <span class="publication-status status-review">Under Review</span></p>
+                    <p class="publication-ranking">Ranking: B</p>
+                    <p class="publication-note">Note: Title is representational</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Skills & Interests</h2>
+            
+            <div class="skills-container">
+                <div class="card fade-in">
+                    <div class="skill-category">
+                        <h3>Interests</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Applications of LLM</span>
+                            <span class="skill-tag">Trustworthy AI</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Multimodality</span>
+                            <span class="skill-tag">Deep Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Unsloth</span>
+                            <span class="skill-tag">Numba</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">FastAPI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Concepts</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">LLM for MRG</span>
+                            <span class="skill-tag">Hallucination in LLM</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">Computer Vision Models</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="achievements">
+        <div class="container">
+            <h2 class="section-title fade-in">Achievements</h2>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-content">
+                    <h3 class="achievement-title">Parayas 2k24: National Level Project Competition</h3>
+                    <p class="achievement-subtitle">2nd position, Software segment (Team Lead)</p>
+                    <p class="achievement-meta">May 2024 | Kolkata, India</p>
+                </div>
+            </div>
+            
+            <div class="achievement-card fade-in">
+                <div class="achievement-icon">🏆</div>
+                <div class="achievement-content">
+                    <h3 class="achievement-title">Kavach 2023: National Cybersecurity Hackathon</h3>
+                    <p class="achievement-subtitle">Top 5 finalist teams (Team Lead), Ministry Of Education, Govt of India</p>
+                    <p class="achievement-meta">August 2023 | Greater Noida, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title fade-in">Education</h2>
+            
+            <div class="card fade-in">
+                <h3 class="card-title">Bachelor of Technology in Computer Science and Business System</h3>
+                <h4 class="card-subtitle">Netaji Subhash Engineering College</h4>
+                <div class="card-meta">
+                    <span>August 2021 - June 2025 (Pursuing)</span>
+                    <span>Kolkata, India</span>
+                </div>
+                <div class="card-content">
+                    <p>CGPA: 8.55/10 (3.42/4)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/sujoy-nath-c0mrd" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/c0mrd" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="footer-text">© 2025 Sujoy Nath. All rights reserved.</p>
+            <p class="footer-text">Kolkata, West Bengal, India</p>
+        </div>
+    </footer>
+    
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
     </div>
-    </div>
-</section>
-<!-- about section ends -->
-
-
-<!-- experience section starts -->
-<section class="experience" id="experience">
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
-  <div class="timeline">
-
-    <div class="container left"><div class="content"><div class="tag"><h2>DRDO, DEBEL Lab</h2></div><div class="desc">
-    <h3>Summer Internship</h3><p>Mar 2024 - Present</p><p>Bengaluru</p><br>
-    <p>I'm currently working on a research project based on gait analysis. It involves developing a deep learning model to predict the walking pattern of a person based on the Xsens IMU input data from the sensors attached to the body. The model will be used to control the prosthetic lower limb based on the predicted gait events and pattern.
-    <br><br><b>Skills</b>:  Python, Tensorflow, Bi-LSTM, GRU, Ensemble Network</p></div></div></div>
-
-    <div class="container right"><div class="content"><div class="tag"><h2>Geogo Technologies</h2></div><div class="desc">
-    <h3>Business Analyst Internship</h3><p>Oct 2023 - Feb 2024</p><p>Kolkata (Hybrid)</p><br>
-    <p>Developed a Transformer based Automatic Speech Recognition model for low resource and mixed language like hinglish with self-attention mechanism. Built a REST API integrating ML models for liveness detection. End product was deployed with PNB metlife insurance system.
-    <br><br><b>Skills</b>:  Tensorflow, keras, Opencv, Audio processing,  Transformer, FastAPI</p></div></div></div>
-
-    <div class="container left"><div class="content"><div class="tag"><h2>Flyo</h2></div><div class="desc">
-    <h3>Data Science Internship</h3><p>Jan 2023 - Apr 2023</p><p>Remote</p><br>
-    <p>I've developed a customer preference recommendation system using neural collaborative filtering techniques. By capturing non-linear patterns in user-item interactions, the system achieves an impressive recommendation accuracy of 92%. This approach ensures a more personalized and satisfying user experience.
-    <br><br><b>Skills</b>: Tensorflow, General Matrix factorization, Multilayer perceptron, pandas, numpy, matplotlib</p></div></div></div>
-
-    <div class="container right"><div class="content"><div class="tag"><h2>Sparks Foundation</h2></div><div class="desc">
-    <h3>Computer Vision Internship</h3><p>Nov 2021 - Jan 2022</p><br>
-    <p>Implemented YOLO algorithm for real-time detection of motorbike without helmet in traffic. Used Multiprocessing in python using opencv for simultaneous inference on different video streams.
-    <br><br><b>Skills</b> Pytorch, Opencv</p></div></div></div>
-          
-  </div><br>
-  <div class="morebtn">
-    <button href="" class="btn"><span>MORE TO DO</span>
-      <i class="fas fa-arrow-right"></i>
-  </a>
-  </div>
-</div>
-</section>
-
-
-
-
-<!-- education section starts -->
-<section class="education" id="education">
-  <h1 class="heading"><i class="fas fa-graduation-cap"></i><span>Education</span></h1>
-  <div class="box-container">
-
-    <div class="box">
-      <!-- <div class="image"><img src="./assets/images/educat/Landing.png" alt=""></div> -->
-      <div class="content">
-        <h3>B.Tech | Computer Science & Business Systems</h3><p>Netaji Subhash Engineering College, Kolkata</p>
-        <h4>2021-2025 (Ongoing)</h4><p>Grade: 8.75 GPA</p>
-      </div>
-    </div>
-
-    <div class="box">
-      <!-- <div class="image"><img src="./assets/images/educat/Landing.png" alt=""></div> -->
-      <div class="content">
-        <h3>Senior Secondary(XII) | Computer Science</h3><p>Madhyamgram High School, Kolkata</p>
-        <h4>2019-2021</h4><p>Grade: 94%</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- education section ends -->
-
-
-
-<!-- PROJECT SECTION STARTS -->
-
-<!-- work project section ends -->
-
-<!-- Hackathons SECTION STARTS -->
-<section class="education" id="hackathons">
-  <h1 class="heading"><i class="fas fa-rocket"></i><span>Hackathons</span></h1>
-  <div class="box-container">
-
-    <div class="box">
-      <!-- <div class="image"><img src="./assets/images/educat/Landing.png" alt=""></div> -->
-      <div class="content">
-        <h3>Prayas 2k24, Techno India University, Kolkata</h3>
-        <h4>2nd position, software segment (Team Lead)</h4>
-      </div>
-    </div>
-
-    <div class="box">
-      <!-- <div class="image"><img src="./assets/images/educat/Landing.png" alt=""></div> -->
-      <div class="content">
-        <h3>Kavach 2023, Ministry of Education, AICTE</h3>
-        <h4>Top 5 teams in grand finale (Team Lead)</h4>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- Hackathons section ends -->
-
-
-<!-- Skills Section Starts -->
-<section class="skills" id="skills">
-  <div class="container">
-    <div class="heading">
-      <h2>Skills</h2><br>
-    </div>
-    <div class="row">
-
-<!-- Programming Languages -->
-<div class="bar section-heading"><h3>Programming Languages --> </h3></div>
-<div class="bar"><div class="info"><span>Python</span></div></div>
-<div class="bar"><div class="info"><span>C++</span></div></div>
-<div class="bar"><div class="info"><span>JavaScript</span></div></div>
-
-<!-- Machine Learning -->
-<div class="bar section-heading"><h3>Supervised Learning --> </h3></div>
-<div class="bar"><div class="info"><span>Regression</span></div></div>
-<div class="bar"><div class="info"><span>Decision Trees</span></div></div>
-<div class="bar"><div class="info"><span>Random Forest</span></div></div>
-<div class="bar"><div class="info"><span>SVM</span></div></div>
-<div class="bar"><div class="info"><span>KNN</span></div></div>
-<div class="bar"><div class="info"><span>Naive Bayes</span></div></div>
-
-<div class="bar section-heading"><h3>Unsupervised Learning --></h3></div>
-<div class="bar"><div class="info"><span>K-Means Clustering</span></div></div>
-<div class="bar"><div class="info"><span>Hierarchical Clustering</span></div></div>
-<div class="bar"><div class="info"><span>Gaussian Mixture Models</span></div></div>
-
-<div class="bar section-heading"><h3>ML Libraries --></h3></div>
-<div class="bar"><div class="info"><span>Tensorflow</span></div></div>
-<div class="bar"><div class="info"><span>Keras</span></div></div>
-<div class="bar"><div class="info"><span>PyTorch</span></div></div>
-<div class="bar"><div class="info"><span>NLTK</span></div></div>
-<div class="bar"><div class="info"><span>Scikit-Learn</span></div></div>
-
-<div class="bar section-heading"><h3>Feature Engineering --></h3></div>
-<div class="bar"><div class="info"><span>Dimensionality Reduction (PCA)</span></div></div>
-<div class="bar"><div class="info"><span>Feature Selection</span></div></div>
-<div class="bar"><div class="info"><span>Normalization</span></div></div>
-
-<div class="bar section-heading"><h3>Deep Learning --></h3></div>
-<div class="bar"><div class="info"><span>CNN</span></div></div>
-<div class="bar"><div class="info"><span>RNN</span></div></div>
-<div class="bar"><div class="info"><span>LSTM</span></div></div>
-<div class="bar"><div class="info"><span>GRU</span></div></div>
-<div class="bar"><div class="info"><span>Transformer</span></div></div>
-
-<div class="bar section-heading"><h3>NLP --></h3></div>
-<div class="bar"><div class="info"><span>Sentiment Analysis</span></div></div>
-<div class="bar"><div class="info"><span>Speech-to-Text</span></div></div>
-
-<!-- Data Manipulation and Visualization -->
-<div class="bar section-heading"><h3>Data Manipulation and Visualization --></h3></div>
-<div class="bar"><div class="info"><span>Pandas</span></div></div>
-<div class="bar"><div class="info"><span>Numpy</span></div></div>
-<div class="bar"><div class="info"><span>Matplotlib</span></div></div>
-<div class="bar"><div class="info"><span>Seaborn</span></div></div>
-<div class="bar"><div class="info"><span>Plotly</span></div></div>
-<div class="bar"><div class="info"><span>SQL</span></div></div>
-
-<!-- Web Development and Deployment -->
-<div class="bar section-heading"><h3>Deployment --></h3></div>
-<div class="bar"><div class="info"><span>Flask</span></div></div>
-<div class="bar"><div class="info"><span>FastAPI</span></div></div>
-<div class="bar"><div class="info"><span>Docker</span></div></div>
-<div class="bar"><div class="info"><span>AWS</span></div></div>
-<div class="bar"><div class="info"><span>Azure</span></div></div>
-
-<!-- Database and Cloud Services -->
-<div class="bar section-heading"><h3>Database --></h3></div>
-<div class="bar"><div class="info"><span>MySQL</span></div></div>
-<div class="bar"><div class="info"><span>PostgreSql</span></div></div>
-<div class="bar"><div class="info"><span>MongoDB</span></div></div>
-
-<!-- Version Control and BI Tools -->
-<div class="bar section-heading"><h3>Version Control</h3></div>
-<div class="bar"><div class="info"><span>Git</span></div></div>
-<div class="bar"><div class="info"><span>DVC</span></div></div>
-
-    </div>
-  </div>
-</section>
-
-<!-- skills section ends -->
-
-
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-    <div class="box">
-        <p>Thank you for visiting my personal portfolio website. If you wish to connect drop an email at <a href="mailto:sujoynathofficial@gmail.com">sujoynathofficial@gmail.com</a> </p>
-        <p>Keep Rising 🚀</p>
-    </div>
-</div>
-
-</section>
-<!-- footer section ends -->
-
-
-
-<!-- scroll top btn -->
-<a href="#home" aria-label="ScrollTop" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
-
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- typed.js cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.5/typed.min.js" integrity="sha512-1KbKusm/hAtkX5FScVR5G36wodIMnVd/aP04af06iyQTkD17szAMGNmxfNH+tEuFp3Og/P5G32L1qEC47CZbUQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- particle.js links -->
-<script src="./assets/js/particles.min.js"></script>
-<script src="./assets/js/app.js"></script>
-
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./assets/js/script.js"></script>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            if (body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+        
+        // Scroll animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight - 100) && (elementBottom > 0);
+                
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        // Initial check for elements in view
+        fadeInOnScroll();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Smooth scrolling for navigation
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+                
+                // Update active link
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+        
+        // Update active nav item on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
