@@ -131,7 +131,8 @@ header nav .container {
 }
 
 .hero-text h2{
-    color: #00aeff;
+    /* color: #00aeff; */
+    color: #ffc107;
 }
 
 /* Specific styling for the name */
@@ -148,7 +149,8 @@ header nav .container {
 .hero-text .subtitle {
     font-size: 1.6rem; /* Slightly larger subtitle */
     font-weight: 300;
-    color: #00aeff; /* Brighter accent color for subtitle */
+    /* color: #00aeff; Brighter accent color for subtitle */
+    color: #ffc107;
     margin-bottom: 1rem;
 }
 
@@ -171,7 +173,8 @@ header nav .container {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 .social-links-hero a:hover {
-    color: #00aeff; /* Highlight color on hover */
+    /* color: #00aeff; Highlight color on hover */
+    color: #ffc107;
     transform: scale(1.1); /* Scale effect on hover */
 }
 
@@ -329,7 +332,8 @@ section h2::after {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background-color: #007bff; /* Accent color */
+    /* background-color: #007bff; Accent color */
+    background-color: #b98d00;
 }
 
 section h2 i {
