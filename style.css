@@ -77,190 +77,111 @@ header nav .container {
 }
 
 /* Hero Section */
-/* === Hero Section Enhancements === */
-
 #hero {
-    /* Replace previous background/color with a gradient */
-    background: linear-gradient(135deg, #2c3e50 0%, #1a2533 100%); /* Dark blue/grey gradient */
-    color: #e0e0e0; /* Lighter text color for dark background */
-    padding: 5rem 0; /* Adjust padding if needed */
-    min-height: 70vh; /* Slightly taller */
+    background: linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)), url('https://via.placeholder.com/1500x600?text=Background+Image') no-repeat center center/cover; /* Placeholder background */
+    color: #fff;
+    text-align: center;
+    padding: 6rem 0;
+    min-height: 60vh;
     display: flex;
-    align-items: center; /* Vertically center the container */
-    position: relative; /* Needed for potential future pseudo-elements */
-    overflow: hidden; /* Hide overflow */
-}
-
-/* Optional: Subtle pattern overlay */
-/* #hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('path/to/subtle-pattern.png'); // Replace with your pattern
-    opacity: 0.05;
-    z-index: 0;
-} */
-
-#hero .hero-container {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    gap: 3rem; /* Slightly increased gap */
-    text-align: left;
-    flex-wrap: wrap;
-    position: relative; /* Ensure content is above pseudo-elements */
-    z-index: 1;
+    align-items: center;
 }
 
-.profile-picture {
-    width: 250px; /* Adjusted size */
-    height: 250px;/* Adjusted size */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.8); /* Slightly thicker, semi-transparent border */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
-}
-.profile-picture:hover {
-    transform: scale(1.05); /* Slight scale on hover */
-}
-
-.hero-text {
-    max-width: 600px;
-}
-
-.hero-text h2{
-    color: #00aeff;
-}
-
-/* Specific styling for the name */
-.hero-text .hero-name {
-    font-size: 3.5rem; /* Larger name */
-    font-weight: 700; /* Bolder */
-    color: #ffffff;   /* White color for name */
+#hero h2 {
+    font-size: 3rem;
     margin-bottom: 0.5rem;
-    line-height: 1.2;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Subtle text shadow */
 }
 
-/* Styling for subtitle */
-.hero-text .subtitle {
-    font-size: 1.6rem; /* Slightly larger subtitle */
+#hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 300;
-    color: #00aeff; /* Brighter accent color for subtitle */
-    margin-bottom: 1rem;
 }
 
-/* Styling for the new tagline */
-.hero-text .tagline {
-    font-size: 1.1rem;
-    color: #bdc3c7; /* Light grey color */
-    margin-bottom: 1.5rem; /* Space before social links */
-    font-style: italic;
+.social-links-hero a, .social-links-contact a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+}
+.social-links-contact a {
+     color: #333; /* Darker color for contact section links */
+     text-decoration: none;
+     font-size: 1.2rem;
+     margin: 0 15px;
+     display: inline-block; /* Ensures spacing */
 }
 
-/* Social Links adjustments */
-.social-links-hero {
-    margin-bottom: 2rem; /* More space before CTA button */
-}
-.social-links-hero a {
-    color: #ffffff; /* White icons */
-    margin: 0 12px;
-    font-size: 2rem; /* Slightly larger icons */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-.social-links-hero a:hover {
-    color: #00aeff; /* Highlight color on hover */
-    transform: scale(1.1); /* Scale effect on hover */
+.social-links-contact a i {
+    margin-right: 5px;
 }
 
-/* Styling for the CTA Button */
-.cta-button {
-    display: inline-block; /* Needed for padding and margin */
-    background-color: #007bff; /* Your primary accent color */
-    color: #ffffff;
-    padding: 12px 25px;
-    border-radius: 25px; /* Pill shape */
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 1rem; /* Space between social links/tagline and button */
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+.social-links-hero a:hover, .social-links-contact a:hover {
+    color: #ddd; /* Slightly lighter on hover for hero */
+}
+.social-links-contact a:hover {
+    color: #007bff; /* Blue hover for contact links */
 }
 
-.cta-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
-}
-
-/* Styling for location info */
-.hero-text .location-info {
-    margin-top: 2rem; /* Space after CTA button */
+#hero p:last-child {
+    margin-top: 1rem;
     font-size: 0.9rem;
-    color: #bdc3c7; /* Light grey */
 }
 
+#hero .hero-text h2 {
+    /* color: #007bff; Use the site's accent blue color */
+    /* Or choose another highlight color, e.g.: */
+    color: #ffc107; /* Gold color */
+    /* color: #ffeb3b; Bright yellow */
+    /* color: #28a745; Green color */
+}
 
-/* === Responsive Adjustments === */
+/* Style for the profile picture */
+.profile-picture {
+    width: 200px;          /* <<< ADJUSTED: Reduced size */
+    height: 200px;         /* <<< ADJUSTED: Reduced size (must match width for circle) */
+    border-radius: 50%;    /* Make it circular */
+    object-fit: cover;     /* Scale image to cover the container, crop if needed, maintain aspect ratio */
+    border: 3px solid #fff; /* Optional: Add a white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow */
+    flex-shrink: 0;        /* Prevent image from shrinking */
+}
+
+/* === Modify Responsive Styles === */
 @media (max-width: 768px) {
-    #hero {
-        padding: 4rem 0; /* Adjust padding */
-        min-height: auto; /* Let content define height */
-    }
+    /* === Existing responsive styles stay the same === */
 
+    /* Adjust Hero for smaller screens */
     #hero .hero-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;     /* Center-align text block on mobile */
+        gap: 1.5rem;            /* Adjust gap for vertical layout */
     }
 
+    /* Adjust profile picture size for mobile */
     .profile-picture {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 0; /* Remove bottom margin as gap handles spacing */
+        width: 100px;       /* <<< ADJUSTED: Smaller image on mobile */
+        height: 100px;      /* <<< ADJUSTED: Smaller image on mobile */
+        margin-bottom: 1rem; /* Add space below image when stacked */
     }
 
     .hero-text {
-        max-width: 100%;
+        max-width: 100%; /* Allow text to use full width */
     }
 
-    .hero-text .hero-name {
-        font-size: 2.8rem; /* Adjust size */
+     /* Center text elements on mobile */
+    .hero-text h2,
+    .hero-text .subtitle,
+    .hero-text .social-links-hero,
+    .hero-text p:last-child {
         text-align: center;
     }
-
-    .hero-text .subtitle {
-        font-size: 1.4rem; /* Adjust size */
-        text-align: center;
-    }
-
-    .hero-text .tagline {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .social-links-hero {
-         justify-content: center;
+    .hero-text .social-links-hero {
+         justify-content: center; /* Center icons within their container */
          display: flex;
-         flex-wrap: wrap;
-         margin-bottom: 1.5rem;
-    }
-    .social-links-hero a {
-        font-size: 1.8rem; /* Adjust size */
-        margin: 0 10px;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-
-    .hero-text .location-info {
-        margin-top: 1.5rem;
-        text-align: center;
+         flex-wrap: wrap; /* Allow icons to wrap */
     }
 }
 
