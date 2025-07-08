@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sujoy Nath - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">c0mrd</h1>
+                <ul class="nav-links">
+                    <li><a href="#hero">About</a></li>
+                    <li><a href="#about">Education</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container hero-container">
+                <img src="assets/images/pic1.jpg" alt="Sujoy Nath Profile Picture" class="profile-picture">
+                <div class="hero-text">
+                    <h2>SUJOY NATH</h2>
+                    <p class="subtitle">ML Engineer</p>
+                    <div class="social-links-hero">
+                        <a href="mailto:sujoynathofficial@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <!-- <a href="https://sujoynath.in" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class="fas fa-globe"></i></a> -->
+                        <a href="https://linkedin.com/in/sujoy-nath-c0mrd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <!-- <a href="https://github.com/c0mrd" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a> -->
+                        <a href="https://scholar.google.com/citations?user=OhzlAyUAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="google-scholar"><i class="fa fa-graduation-cap"></i></a>
+                    </div>
+                    <p>Kolkata, West Bengal, India</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2><i class="fas fa-user-graduate"></i> Education</h2>
+                 <div class="education-item">
+                    <h3>Bachelor of Technology in Computer Science and Business System</h3>
+                    <p><strong>Netaji Subhash Engineering College</strong>, Kolkata, India</p>
+                    <p><em>August 2021 - June 2025 (Pursuing)</em></p>
+                    <p>CGPA: 8.56/10 (3.42/4)</p>
+                </div>
+                <!-- Optional: Add a brief "About Me" paragraph here -->
+                <!--
+                <h2><i class="fas fa-info-circle"></i> About Me</h2>
+                <p> [Write a brief paragraph about yourself, your interests, and career goals here] </p>
+                -->
+            </div>
+        </section>
+
+        <section id="publications" class="alternate-bg">
+            <div class="container">
+                 <h2><i class="fas fa-book-open"></i> Research Publications</h2>
+
+                 <div class="publication-item">
+                    <p><strong>1. From Complexity to Clarity: Transforming Chest X-ray Reports with Chained Prompting</strong></p>
+                    <p><em>Authors:</em> <u>Sujoy Nath</u>, Arkaprabha Basu, Kushal Bose, Swagatam Das</p>
+                    <p>
+                        <em>Conference:</em> <b>AAAI 2025 Student Abstract</b> (Ranking: A*)
+                        <span class="status-label status-accepted">Accepted</span>
+                        <a href="https://doi.org/10.1609/aaai.v39i28.35281">https://doi.org/10.1609/aaai.v39i28.35281</a>
+                    </p>
+                 </div>
+
+                 <div class="publication-item">
+                    <p><strong>2. HalluShift: Measuring Distribution Shifts towards Hallucination Detection in LLMs</strong></p>
+                    <p><em>Authors:</em> Sharanya Dasgupta, <u>Sujoy Nath</u>, Arkaprabha Basu, Pourya Shamsolmoali, Swagatam Das</p>
+                    <p>
+                        <em>Conference:</em> <b>IJCNN 2025</b> (Ranking: B)
+                         <span class="status-label status-accepted">Accepted</span>
+                        <a href="https://arxiv.org/abs/2504.09482">https://arxiv.org/abs/2504.09482</a>
+                    </p>
+                 </div>
+
+                 <!--
+                 <div class="publication-item">
+                    <p><strong>3. Title of Your Paper Under Review</strong></p>
+                    <p><em>Authors:</em> Your Name, Collaborator Name</p>
+                    <p>
+                        <em>Venue:</em> Submitted to Conference/Journal XYZ
+                         <span class="status-label status-under-review">Under Review</span>
+                    </p>
+                 </div>
+                 -->
+
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2><i class="fas fa-briefcase"></i> Experience</h2>
+
+                <div class="experience-category">
+                    <h3>Research Experience</h3>
+                    <div class="experience-item">
+                        <h4>Project Intern</h4>
+                        <p><strong>Indian Statistical Institute (ISI), Electronics and Communication Sciences Unit (ECSU)</strong></p>
+                        <p><em>June 2024 - Present | Kolkata, India (Onsite)</em></p>
+                        <p><em>Supervisor: Dr. Swagatam Das</em></p>
+                        <ul>
+                            <li>Worked on simplified Medical Report Generation (MRG) using prompt engineering (Chained Prompting, In-Context Learning), fine-tuned LLaMa models, and integrated Gemini-1.5-Flash API.</li>
+                            <li>Proposed CPMK-E (Chained Prompting for Medical Report Keyword Extraction) for LLM fairness in medical settings (Accepted at AAAI 2025 Student Abstract).</li>
+                            <li>Developed a detailed image captioning system using BLIP, CerberusDet (fine-tuned YOLOv8), fine-tuned LLaMa 3.1/2, Mistral 7B, Phi-2, and Gemini-1.5-Flash API. Evaluated with BLEU, ROUGE, BERTScore, Repetition Rate.</li>
+                        </ul>
+                    </div>
+                     <div class="experience-item">
+                        <h4>Research Internship</h4>
+                        <p><strong>Defence Research and Development Organisation (DRDO), DEBEL Lab</strong></p>
+                        <p><em>March 2024 - April 2024 | Bengaluru, India (Onsite)</em></p>
+                         <ul>
+                            <li>Developed a comprehensive dataset using IMU sensor data (Xsens) capturing walking patterns of 20 subjects.</li>
+                            <li>Applied computer vision and machine learning for motion analysis.</li>
+                            <li>Researched human gait pattern analysis using ensemble learning for real-time prediction systems for lower limb prosthetics.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-category">
+                     <h3>Industry Experience</h3>
+                     <div class="experience-item">
+                        <h4>Machine Learning Engineer Intern</h4>
+                        <p><strong>Geogo Techsolutions</strong></p>
+                        <p><em>October 2023 - Present | Kolkata, India (Hybrid)</em></p>
+                         <ul>
+                            <li>Built an end-to-end face comparison and similarity search solution (98% accuracy vs. Amazon Rekognition) using state-of-the-art CV models for employee authorization and verification.</li>
+                            <li>Developed a custom vector database with Bruteforce and PCA indexing for efficient large-scale image embedding searches.</li>
+                            <li>Engineered an Automatic Speech Recognition (ASR) model (Transformer architecture) for Hindi-English mixed data, achieving 34% WER with innovative audio preprocessing (STFT, Conv1D). Deployed for insurance call transcription.</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="skills" class="alternate-bg">
+            <div class="container">
+                <h2><i class="fas fa-cogs"></i> Skills and Interests</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-lightbulb"></i> Interests</h3>
+                        <ul>
+                            <li>Applications of LLM</li>
+                            <li>Trustworthy AI</li>
+                            <li>Computer Vision</li>
+                            <li>Multimodality</li>
+                            <li>Deep Learning</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Frameworks</h3>
+                        <ul>
+                            <li>Pytorch</li>
+                            <li>Tensorflow</li>
+                            <li>Unsloth</li>
+                            <li>Numba</li>
+                            <li>OpenCV</li>
+                            <li>FastAPI</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-brain"></i> Concepts</h3>
+                        <ul>
+                            <li>LLM for MRG</li>
+                            <li>Hallucination in LLM</li>
+                            <li>Prompt Engineering</li>
+                            <li>Computer Vision Models</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="achievements">
+            <div class="container">
+                <h2><i class="fas fa-trophy"></i> Achievements</h2>
+                <div class="achievement-item">
+                    <h3>Parayas 2k24: National Level Project Competition</h3>
+                    <p><strong>2nd position</strong>, Software segment (Team Lead)</p>
+                    <p><em>May 2024 | Kolkata, India</em></p>
+                </div>
+                 <div class="achievement-item">
+                    <h3>Kavach 2023: National Cybersecurity Hackathon</h3>
+                    <p><strong>Top 5 finalist teams</strong> (Team Lead)</p>
+                    <p><em>Ministry Of Education, Govt of India | Aug 2023 | Greater Noida, India</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="alternate-bg">
+            <div class="container">
+                 <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+                 <p>Feel free to reach out via email or connect with me on social media.</p>
+                 <div class="contact-details">
+                     <p><i class="fas fa-envelope"></i> <a href="mailto:sujoynathofficial@gmail.com">sujoynathofficial@gmail.com</a></p>
+                     <!-- <p><i class="fas fa-phone"></i> +91-9123799039</p> -->
+                     <p><i class="fas fa-map-marker-alt"></i> Kolkata, West Bengal, India</p>
+                 </div>
+                 <div class="social-links-contact">
+                    <!-- <a href="https://sujoynath.in" target="_blank" rel="noopener noreferrer" aria-label="Website"><i class="fas fa-globe"></i> Website</a> -->
+                    <a href="https://linkedin.com/in/sujoy-nath-c0mrd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/c0mrd" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://x.com/sujoynath_ai" target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)"><i class="fab fa-twitter"></i> X / Twitter</a>
+                 </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Sujoy Nath. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
