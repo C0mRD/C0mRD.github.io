@@ -53,8 +53,8 @@ const citations = {
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2602.04291}, 
 }
-}`,
-    }
+}`
+    },
 };
 
 // Modal functionality
