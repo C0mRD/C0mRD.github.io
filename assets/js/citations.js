@@ -41,6 +41,18 @@ const citations = {
   journal={arXiv preprint arXiv:2512.07687},
   year={2025}
 }
+}`
+    },
+    disentangle: {
+        bibtex: `@misc{ghosh2026disentanglingcausalimportanceemergent,
+      title={Disentangling Causal Importance from Emergent Structure in Multi-Expert Orchestration}, 
+      author={Sudipto Ghosh and Sujoy Nath and Sunny Manchanda and Tanmoy Chakraborty},
+      year={2026},
+      eprint={2602.04291},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2602.04291}, 
+}
 }`,
     }
 };
