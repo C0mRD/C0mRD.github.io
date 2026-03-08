@@ -1302,3 +1302,19 @@ html {
         font-size: 0.9rem;
     }
 }
+
+.highlight{
+  position: relative;
+  z-index: 1;
+}
+
+.highlight::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 120%;
+  height: 100%;
+  background: #a3fc6f;
+  z-index: -1;
+}
