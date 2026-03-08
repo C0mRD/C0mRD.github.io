@@ -1311,10 +1311,10 @@ html {
 .highlight::before{
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 3px;
+  left: -2px;
+  bottom: -2px;
   width: 120%;
-  height: 100%;
+  height: 150%;
   background: #a3fc6f;
   z-index: -1;
 }
