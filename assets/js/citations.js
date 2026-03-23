@@ -1,11 +1,23 @@
 // Citation data for each publication
 const citations = {
     arrest: {
-        bibtex: `@article{dasgupta2026arrest,
-  title={ARREST: Adversarial Resilient Regulation Enhancing Safety and Truth in Large Language Models},
-  author={Dasgupta, Sharanya and Basu, Arkaprabha and Nath, Sujoy and Das, Swagatam},
-  journal={arXiv preprint arXiv:2601.04394},
-  year={2026}
+        bibtex: `@inproceedings{dasgupta-etal-2026-arrest,
+    title = "{ARREST}: Adversarial Resilient Regulation Enhancing Safety and Truth in Large Language Models",
+    author = "Dasgupta, Sharanya  and
+      Basu, Arkaprabha  and
+      Nath, Sujoy  and
+      Das, Swagatam",
+    editor = "Demberg, Vera  and
+      Inui, Kentaro  and
+      Marquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-long.212/",
+    pages = "4565--4584",
+    ISBN = "979-8-89176-380-7"
 }
 }`,
     },
