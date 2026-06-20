@@ -56,14 +56,15 @@ const citations = {
 }`
     },
     disentangle: {
-        bibtex: `@misc{ghosh2026disentanglingcausalimportanceemergent,
-      title={Disentangling Causal Importance from Emergent Structure in Multi-Expert Orchestration}, 
-      author={Sudipto Ghosh and Sujoy Nath and Sunny Manchanda and Tanmoy Chakraborty},
-      year={2026},
-      eprint={2602.04291},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2602.04291}, 
+        bibtex: `@article{
+ghosh2026disentangling,
+title={Disentangling Intrinsic Importance from Emergent Structure in Multi-Expert Orchestration},
+author={Sudipto Ghosh and Sujoy Nath and Sunny Manchanda and Tanmoy Chakraborty},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2026},
+url={https://openreview.net/forum?id=4W7sgat04A},
+note={}
 }
 }`
     },
