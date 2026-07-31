@@ -47,13 +47,23 @@ const citations = {
 }`,
     },
     hallushiftpp: {
-        bibtex: `@article{nath2025hallushift++,
-  title={HalluShift++: Bridging Language and Vision through Internal Representation Shifts for Hierarchical Hallucinations in MLLMs},
-  author={Nath, Sujoy and Basu, Arkaprabha and Dasgupta, Sharanya and Das, Swagatam},
-  journal={arXiv preprint arXiv:2512.07687},
-  year={2025}
-}
-}`
+        bibtex: `@inproceedings{10.1145/3774521.3774542,
+author = {Nath, Sujoy and Basu, Arkaprabha and Dasgupta, Sharanya and Das, Swagatam},
+title = {HalluShift++: Bridging Language and Vision through Internal Representation Shifts for Hierarchical Hallucinations in MLLMs},
+year = {2026},
+isbn = {9798400719301},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3774521.3774542},
+doi = {10.1145/3774521.3774542},
+booktitle = {Proceedings of the Sixteen Indian Conference on Computer Vision, Graphics and Image Processing},
+articleno = {19},
+numpages = {9},
+keywords = {Hallucination Detection, Multi-modal Large Language Models, Object Hallucination},
+location = {
+},
+series = {ICVGIP '25}
+}`,
     },
     disentangle: {
         bibtex: `@article{
