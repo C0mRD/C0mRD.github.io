@@ -78,6 +78,18 @@ note={}
 }
 }`
     },
+    fire: {
+        bibtex: `@misc{nath2026counterevidencemultiagentmemory,
+      title={Counter with Evidence! A Multi-Agent Memory Efficient Reasoning Framework for Hate Category Informed Counterspeech Generation}, 
+      author={Sujoy Nath and Aswini Kumar and Tanmoy Chakraborty},
+      year={2026},
+      eprint={2608.23152},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2608.23152}, 
+}
+}`
+    },
 };
 
 // Modal functionality
